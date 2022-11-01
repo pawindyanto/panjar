@@ -2,11 +2,10 @@
 session_start();
 // Define Database
 include "./config/conn_DBpanjar.php";
-if (!isset($_SESSION["talak"])) {
-  header("Location: hitung_talak");
+if (!isset($_SESSION["harta_bersama"])) {
+  header("Location: hitung_harta_bersama");
   exit;
 }
-
 // Define Variabel by Session 
 $kota1 = $_SESSION["kota1"];
 $kecamatan1 = $_SESSION["kecamatan1"];
@@ -32,7 +31,7 @@ $pemohon = mysqli_query($conn, "SELECT a.NM_KEL, a.RADIUS, b.NM_KEC, c.biaya
 
 $result1 = mysqli_fetch_assoc($pemohon);
 
-$biaya_pemohon = 3 * $result1["biaya"];
+$biaya_pemohon = 2 * $result1["biaya"];
 
 
 // Define and Identified Location Name for Termohon
@@ -48,7 +47,7 @@ $termohon = mysqli_query($conn, "SELECT a.NM_KEL AS KELURAHAN, a.RADIUS, b.NM_KE
 
 $result2 = mysqli_fetch_assoc($termohon);
 
-$biaya_termohon = 4 * $result2["harga"];
+$biaya_termohon = 3 * $result2["harga"];
 
 // Define biaya rincian
 $pendaftaran = 30000;
@@ -78,7 +77,7 @@ $terbilang = terbilang($jumlah);
     responsiveVoice.OnVoiceReady = function() {
       console.log("speech time?");
       responsiveVoice.speak(
-        "Jumlah Biaya Cerai Talak Sebesar <?php echo $terbilang; ?> Rupiah",
+        "Jumlah Biaya Gugatan Harta Bersama Sebesar <?php echo $terbilang; ?> Rupiah",
         "Indonesian Female", {
           pitch: 1,
           rate: 1,
@@ -152,7 +151,7 @@ $terbilang = terbilang($jumlah);
         <div class="col-lg-12 mb-lg-0 mb-4">
           <div class="card mb-3 z-index-2 h-100">
             <div class="card-header pb-0 text-center pt-3 bg-transparent">
-              <h6 class="text-capitalize">Rincian Biaya Panjar Cerai Talak</h6>
+              <h6 class="text-capitalize">Rincian Biaya Panjar Gugatan Harta Bersama</h6>
 
             </div>
             <div class="card-body">
@@ -203,7 +202,7 @@ $terbilang = terbilang($jumlah);
                           <div class="d-flex px-2 py-1">
 
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-xs">Panggilan Pemohon (3 Kali)</h6>
+                              <h6 class="mb-0 text-xs">Panggilan Penggugat (2 Kali)</h6>
                               <br>
                               <h6 class="mb-0 text-xs">Lokasi: KELURAHAN <?= $result1["NM_KEL"] ?>, </h6>
                               <h6 class="mb-0 text-xs">KECAMATAN <?= $result1["NM_KEC"] ?></h6>
@@ -232,7 +231,7 @@ $terbilang = terbilang($jumlah);
                           <div class="d-flex px-2 py-1">
 
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-xs">Panggilan Termohon(4 Kali)</h6>
+                              <h6 class="mb-0 text-xs">Panggilan Tergugat (3 Kali)</h6>
                               <br>
                               <h6 class="mb-0 text-xs">Lokasi: KELURAHAN <?= $result2["KELURAHAN"] ?>, </h6>
                               <h6 class="mb-0 text-xs">KECAMATAN <?= $result2["KECAMATAN"] ?></h6>
@@ -321,8 +320,8 @@ $terbilang = terbilang($jumlah);
 
               </div>
               <div class="mt-4">
-                <a href="hitung_talak" class="btn btn-sm btn-danger" style="margin-right: 15px;">Close</a>
-                <a href="rpt_talak" class="btn btn-sm btn-primary">Print PDF</a>
+                <a href="hitung_harta_bersama" class="btn btn-sm btn-danger" style="margin-right: 15px;">Close</a>
+                <a href="rpt_harta_bersama" class="btn btn-sm btn-primary">Print PDF</a>
               </div>
             </div>
 

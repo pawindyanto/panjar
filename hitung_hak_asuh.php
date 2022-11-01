@@ -10,7 +10,7 @@ $kota1 = isset($_POST['kota1']) ? $$_POST['kota1'] : '';
 $kota2 = isset($_POST['kota2']) ? $$_POST['kota2'] : '';
 // Define Talak
 if (isset($_POST["talak"])) {
-  $_SESSION["gugat"] = true;
+  $_SESSION["hak_asuh"] = true;
   $kota1 = $_POST["kota1"];
   $kota2 = $_POST["kota2"];
   $kecamatan1 = $_POST["kecamatan1"];
@@ -24,7 +24,7 @@ if (isset($_POST["talak"])) {
   $_SESSION["kota2"] = $kota2;
   $_SESSION["kecamatan2"] = $kecamatan2;
   $_SESSION["kelurahan2"] = $kelurahan2;
-  header("Location: view_gugat");
+  header("Location: view_hak_asuh");
 }
 
 
@@ -160,7 +160,7 @@ if (isset($_POST["talak"])) {
     responsiveVoice.OnVoiceReady = function() {
       console.log("speech time?");
       responsiveVoice.speak(
-        "Perhitungan Cerai Gugat",
+        "Perhitungan Hak Asuh Anak",
         "Indonesian Female", {
           pitch: 1,
           rate: 1,
@@ -235,13 +235,13 @@ if (isset($_POST["talak"])) {
           <form action="" method="POST">
             <div class="card mb-3 z-index-2 h-100">
               <div class="card-header pb-0 pt-3 bg-transparent">
-                <h6 class="text-capitalize">Cerai Gugat (Yang Diajukan Oleh Istri)</h6>
+                <h6 class="text-capitalize">Hak Asuh Anak</h6>
 
               </div>
               <div class="card-body">
                 <div class="card">
                   <div class="card-header pb-0 bg-transparent">
-                    <h6 class="text-capitalize">Data Penggugat (istri)</h6>
+                    <h6 class="text-capitalize">Data Penggugat </h6>
                   </div>
                   <div class="card-body">
 
@@ -277,7 +277,7 @@ if (isset($_POST["talak"])) {
                 </div>
                 <div class="card mt-2">
                   <div class="card-header pb-0  bg-transparent">
-                    <h6 class="text-capitalize">Data Tergugat (Suami)</h6>
+                    <h6 class="text-capitalize">Data Tergugat </h6>
                   </div>
                   <div class="card-body">
 

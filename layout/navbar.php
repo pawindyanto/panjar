@@ -8,7 +8,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" href="hitung_talak">
+        <a class="nav-link" href="hitung_talak">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
@@ -16,7 +16,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link " href="#">
+        <a class="nav-link " href="hitung_gugat">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
@@ -24,7 +24,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link " href="#">
+        <a class="nav-link " href="hitung_harta_bersama">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -32,7 +32,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link " href="#">
+        <a class="nav-link " href="hitung_hak_asuh">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
@@ -40,7 +40,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link " href="#">
+        <a class="nav-link " href="hitung_izin_poligami">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
             </div>
@@ -48,7 +48,7 @@
         </a>
     </li>
 
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link " href="#">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
@@ -71,8 +71,8 @@
             </div>
             <span class="nav-link-text ms-1">Pengangkatan Anak</span>
         </a>
-    </li>
-    <li class="nav-item">
+    </li> -->
+    <!-- <li class="nav-item">
         <a class="nav-link " href="#">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
@@ -103,6 +103,6 @@
             </div>
             <span class="nav-link-text ms-1">Isbat Cerai</span>
         </a>
-    </li>
+    </li> -->
 
 </ul>

@@ -2,7 +2,10 @@
 session_start();
 // Define Database
 include './config/conn_DBpanjar.php';
-
+if (!isset($_SESSION["talak"])) {
+    header("Location: hitung_talak");
+    exit;
+}
 // Define Variabel by Session 
 $kota1 = $_SESSION["kota1"];
 $kecamatan1 = $_SESSION["kecamatan1"];

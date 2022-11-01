@@ -2,8 +2,8 @@
 session_start();
 // Define Database
 include './config/conn_DBpanjar.php';
-if (!isset($_SESSION["gugat"])) {
-    header("Location: hitung_gugat");
+if (!isset($_SESSION["izin_poligami"])) {
+    header("Location: hitung_izin_poligami");
     exit;
 }
 // Define Variabel by Session 
@@ -102,7 +102,7 @@ $html1 = '
 <table class="isi" style="width:100%;" >
 <tr class="isi">
       <td colspan="2" class="isi" style="padding: 10px 0; text-align: center">
-          <h4>Rincian Biaya Perkara Cerai Gugat</h4>
+          <h4>Rincian Biaya Perkara Izin Poligami</h4>
       </td> 
 </tr>
   <tr class="isi">
