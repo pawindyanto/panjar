@@ -11,13 +11,19 @@ $kota1 = isset($_POST['kota1']) ? $$_POST['kota1'] : '';
 $kota2 = isset($_POST['kota2']) ? $$_POST['kota2'] : '';
 // Define Talak
 if (isset($_POST["talak"])) {
-  $_SESSION["talak"] = true;
+  // $_SESSION["talak"] = true;
   $kota1 = $_POST["kota1"];
   $kota2 = $_POST["kota2"];
+  $kota3 = $_POST["kota3"];
+  $kota4 = $_POST["kota4"];
   $kecamatan1 = $_POST["kecamatan1"];
   $kecamatan2 = $_POST["kecamatan2"];
+  $kecamatan3 = $_POST["kecamatan3"];
+  $kecamatan4 = $_POST["kecamatan4"];
   $kelurahan1 = $_POST["kelurahan1"];
   $kelurahan2 = $_POST["kelurahan2"];
+  $kelurahan3 = $_POST["kelurahan3"];
+  $kelurahan4 = $_POST["kelurahan4"];
 
   $_SESSION["kota1"] = $kota1;
   $_SESSION["kecamatan1"] = $kecamatan1;
@@ -25,6 +31,12 @@ if (isset($_POST["talak"])) {
   $_SESSION["kota2"] = $kota2;
   $_SESSION["kecamatan2"] = $kecamatan2;
   $_SESSION["kelurahan2"] = $kelurahan2;
+  $_SESSION["kota3"] = $kota3;
+  $_SESSION["kecamatan3"] = $kecamatan3;
+  $_SESSION["kelurahan3"] = $kelurahan3;
+  $_SESSION["kota4"] = $kota4;
+  $_SESSION["kecamatan4"] = $kecamatan4;
+  $_SESSION["kelurahan4"] = $kelurahan4;
   header("Location: view_dispensasi_kawin");
 }
 
