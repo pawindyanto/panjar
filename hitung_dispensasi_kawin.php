@@ -13,6 +13,7 @@ if (isset($_POST["talak"])) {
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
