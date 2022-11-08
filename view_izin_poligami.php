@@ -219,7 +219,7 @@ $terbilang = terbilang($jumlah);
                           <div class="d-flex px-2 py-1">
 
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-xs">Panggilan Penggugat (2 Kali)</h6>
+                              <h6 class="mb-0 text-xs">Panggilan Pemohon 1 (2 Kali)</h6>
                               <br>
                               <h6 class="mb-0 text-xs">Lokasi: KELURAHAN <?= $result1["NM_KEL"] ?>, </h6>
                               <h6 class="mb-0 text-xs">KECAMATAN <?= $result1["NM_KEC"] ?></h6>
