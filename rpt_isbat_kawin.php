@@ -31,21 +31,6 @@ $result1 = mysqli_fetch_assoc($pemohon);
 $biaya_pemohon = 3 * $result1["biaya"];
 
 
-// Define and Identified Location Name for Termohon
-$termohon = mysqli_query($conn, "SELECT a.NM_KEL, a.RADIUS, b.NM_KEC, c.biaya
-                                FROM ref_kelurahan a
-                                LEFT JOIN ref_kecamatan b
-                                ON a.KD_KEC = b.KD_KEC
-                                LEFT JOIN ref_radius c
-                                ON a.RADIUS = c.radius
-                                WHERE a.KD_KEC='$kecamatan2'
-                                and a.KD_KEL='$kelurahan2'
-                               
-                                ");
-
-$result2 = mysqli_fetch_assoc($termohon);
-
-$biaya_termohon = 3 * $result2["biaya"];
 
 // Define biaya rincian
 $pendaftaran = 30000;
@@ -54,7 +39,7 @@ $pnbp_pgl1 = 10000;
 $pnbp_putusan = 10000;
 $redaksi = 10000;
 $materai = 10000;
-$jumlah = $biaya_pemohon + $biaya_termohon + $pendaftaran + $proses + ($pnbp_pgl1 * 1) + ($pnbp_pgl1 * 1) + $pnbp_putusan + $redaksi + $materai;
+$jumlah = $biaya_pemohon  + $pendaftaran + $proses + ($pnbp_pgl1 * 1) + $pnbp_putusan + $redaksi + $materai;
 
 // Require composer autoload
 require_once __DIR__ . '/vendor/autoload.php';
@@ -156,28 +141,7 @@ $html1 = '
           <p>Rp. ' . number_format(($pnbp_pgl1 * 1), 0, ",", ".") . '</p>
       </td> 
   </tr>
-  <tr class="isi">
-      <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>Panggilan Pemohon 2 (3 Kali)</p>
-          <br>
-          <p>Lokasi: KELURAHAN ' . $result2["NM_KEL"] . ', KECAMATAN ' . $result2["NM_KEC"] . '</p>
-         
-      </td>
-      
-      <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
-          <p>Rp. ' . number_format($biaya_termohon, 0, ",", ".") . '</p>
-      </td> 
-  </tr>
-  <tr class="isi">
-      <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>PNBP Panggilan</p>
-         
-      </td>
-      
-      <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
-          <p>Rp. ' . number_format(($pnbp_pgl1 * 1), 0, ",", ".") . '</p>
-      </td> 
-  </tr>
+ 
   <tr class="isi">
       <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
           <p>PNBP PBT Putusan</p>

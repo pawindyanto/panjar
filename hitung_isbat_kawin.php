@@ -241,7 +241,7 @@ if (isset($_POST["talak"])) {
               <div class="card-body">
                 <div class="card">
                   <div class="card-header pb-0 bg-transparent">
-                    <h6 class="text-capitalize">Data Pemohon 1</h6>
+                    <h6 class="text-capitalize">Data Pemohon 1 & Pemohon 2</h6>
                   </div>
                   <div class="card-body">
 
@@ -273,51 +273,14 @@ if (isset($_POST["talak"])) {
 
                       </select>
                     </div>
-                  </div>
-                </div>
-                <div class="card mt-2">
-                  <div class="card-header pb-0  bg-transparent">
-                    <h6 class="text-capitalize">Data Pemohon 2</h6>
-                  </div>
-                  <div class="card-body">
-
-
-                    <div class="form-group">
-                      <label for="kota2">Kota</label>
-                      <select class="form-control" name="kota2" id="kota2" required>
-                        <option value="">--- Pilih Kota ---</option>
-                        <?php
-                        $kota = mysqli_query($conn, "SELECT * FROM ref_kota ORDER BY KD_KOTA");
-                        while ($k = mysqli_fetch_assoc($kota)) : ?>
-                          <option value="<?= $k["KD_KOTA"] ?>"><?= $k["NM_KOTA"] ?></option>
-                        <?php
-                        endwhile;
-                        ?>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="kecamatan2">Kecamatan</label>
-                      <select class="form-control" name="kecamatan2" id="kecamatan2" required>
-                        <option value="">--- Pilih Kecamatan ---</option>
-
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="kelurahan2">Kelurahan</label>
-                      <select class="form-control" name="kelurahan2" id="kelurahan2" required>
-                        <option value="">--- Pilih Kelurahan ---</option>
-
-                      </select>
-                    </div>
                     <div>
                       <button class="btn btn-icon btn-3 btn-success" type="submit" name="talak">
                         <span class="btn-inner--text">Hitung</span>
                       </button>
                     </div>
-
-
                   </div>
                 </div>
+
 
               </div>
             </div>

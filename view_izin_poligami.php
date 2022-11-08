@@ -15,6 +15,9 @@ $kota2 = $_SESSION["kota2"];
 $kecamatan2 = $_SESSION["kecamatan2"];
 $kelurahan2 = $_SESSION["kelurahan2"];
 
+$kota3 = $_SESSION["kota3"];
+$kecamatan3 = $_SESSION["kecamatan3"];
+$kelurahan3 = $_SESSION["kelurahan3"];
 
 
 
@@ -49,6 +52,20 @@ $result2 = mysqli_fetch_assoc($termohon);
 
 $biaya_termohon = 3 * $result2["harga"];
 
+$pemohon3 = mysqli_query($conn, "SELECT a.NM_KEL AS KELURAHAN, a.RADIUS, b.NM_KEC AS KECAMATAN, c.biaya AS harga
+                                FROM ref_kelurahan a
+                                LEFT JOIN ref_kecamatan b
+                                ON a.KD_KEC = b.KD_KEC
+                                LEFT JOIN ref_radius c
+                                ON a.RADIUS = c.radius
+                                WHERE a.KD_KEC='$kecamatan2'
+                                and a.KD_KEL='$kelurahan2'
+                                ");
+
+$result3 = mysqli_fetch_assoc($pemohon3);
+
+$biaya_pemohon3 = 3 * $result3["harga"];
+
 // Define biaya rincian
 $pendaftaran = 30000;
 $proses = 75000;
@@ -56,7 +73,7 @@ $pnbp_pgl1 = 10000;
 $pnbp_putusan = 10000;
 $redaksi = 10000;
 $materai = 10000;
-$jumlah = $biaya_pemohon + $biaya_termohon + $pendaftaran + $proses + ($pnbp_pgl1) + ($pnbp_pgl1) + $pnbp_putusan + $redaksi + $materai;
+$jumlah = $biaya_pemohon + $biaya_termohon + $biaya_pemohon3 + $pendaftaran + $proses + ($pnbp_pgl1 * 3)  + $pnbp_putusan + $redaksi + $materai;
 
 $terbilang = terbilang($jumlah);
 ?>

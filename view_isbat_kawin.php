@@ -11,9 +11,7 @@ $kota1 = $_SESSION["kota1"];
 $kecamatan1 = $_SESSION["kecamatan1"];
 $kelurahan1 = $_SESSION["kelurahan1"];
 
-$kota2 = $_SESSION["kota2"];
-$kecamatan2 = $_SESSION["kecamatan2"];
-$kelurahan2 = $_SESSION["kelurahan2"];
+
 
 
 
@@ -34,20 +32,7 @@ $result1 = mysqli_fetch_assoc($pemohon);
 $biaya_pemohon = 3 * $result1["biaya"];
 
 
-// Define and Identified Location Name for Termohon
-$termohon = mysqli_query($conn, "SELECT a.NM_KEL AS KELURAHAN, a.RADIUS, b.NM_KEC AS KECAMATAN, c.biaya AS harga
-                                FROM ref_kelurahan a
-                                LEFT JOIN ref_kecamatan b
-                                ON a.KD_KEC = b.KD_KEC
-                                LEFT JOIN ref_radius c
-                                ON a.RADIUS = c.radius
-                                WHERE a.KD_KEC='$kecamatan2'
-                                and a.KD_KEL='$kelurahan2'
-                                ");
 
-$result2 = mysqli_fetch_assoc($termohon);
-
-$biaya_termohon = 3 * $result2["harga"];
 
 // Define biaya rincian
 $pendaftaran = 30000;
@@ -56,7 +41,7 @@ $pnbp_pgl1 = 10000;
 $pnbp_putusan = 10000;
 $redaksi = 10000;
 $materai = 10000;
-$jumlah = $biaya_pemohon + $biaya_termohon + $pendaftaran + $proses + ($pnbp_pgl1) + ($pnbp_pgl1) + $pnbp_putusan + $redaksi + $materai;
+$jumlah = $biaya_pemohon  + $pendaftaran + $proses + ($pnbp_pgl1) + $pnbp_putusan + $redaksi + $materai;
 
 $terbilang = terbilang($jumlah);
 ?>
@@ -202,7 +187,7 @@ $terbilang = terbilang($jumlah);
                           <div class="d-flex px-2 py-1">
 
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-xs">Panggilan Pemohon 1 (3 Kali)</h6>
+                              <h6 class="mb-0 text-xs">Panggilan Pemohon 1 & Pemohon 2(3 Kali)</h6>
                               <br>
                               <h6 class="mb-0 text-xs">Lokasi: KELURAHAN <?= $result1["NM_KEL"] ?>, </h6>
                               <h6 class="mb-0 text-xs">KECAMATAN <?= $result1["NM_KEC"] ?></h6>
@@ -226,35 +211,7 @@ $terbilang = terbilang($jumlah);
                           <p class="text-xs font-weight-bold mb-0">Rp. <?= number_format(($pnbp_pgl1), 0, ",", ".") ?></p>
                         </td>
                       </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex px-2 py-1">
 
-                            <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-xs">Panggilan Pemohon 2 (3 Kali)</h6>
-                              <br>
-                              <h6 class="mb-0 text-xs">Lokasi: KELURAHAN <?= $result2["KELURAHAN"] ?>, </h6>
-                              <h6 class="mb-0 text-xs">KECAMATAN <?= $result2["KECAMATAN"] ?></h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="text-xs font-weight-bold mb-0">Rp. <?= number_format($biaya_termohon, 0, ",", ".") ?></p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex px-2 py-1">
-
-                            <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-xs">PNBP Panggilan</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="text-xs font-weight-bold mb-0">Rp. <?= number_format(($pnbp_pgl1), 0, ",", ".") ?></p>
-                        </td>
-                      </tr>
                       <tr>
                         <td>
                           <div class="d-flex px-2 py-1">
