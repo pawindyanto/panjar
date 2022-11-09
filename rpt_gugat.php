@@ -127,7 +127,7 @@ $html1 = '
   </tr>
   <tr class="isi">
       <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>Biaya Proses</p>
+          <p>Biaya Proses / ATK</p>
          
       </td>
       

@@ -52,19 +52,7 @@ $result2 = mysqli_fetch_assoc($termohon);
 
 $biaya_termohon = 3 * $result2["harga"];
 
-$pemohon3 = mysqli_query($conn, "SELECT a.NM_KEL AS KELURAHAN, a.RADIUS, b.NM_KEC AS KECAMATAN, c.biaya AS harga
-                                FROM ref_kelurahan a
-                                LEFT JOIN ref_kecamatan b
-                                ON a.KD_KEC = b.KD_KEC
-                                LEFT JOIN ref_radius c
-                                ON a.RADIUS = c.radius
-                                WHERE a.KD_KEC='$kecamatan2'
-                                and a.KD_KEL='$kelurahan2'
-                                ");
 
-$result3 = mysqli_fetch_assoc($pemohon3);
-
-$biaya_pemohon3 = 3 * $result3["harga"];
 
 // Define biaya rincian
 $pendaftaran = 30000;
@@ -73,7 +61,7 @@ $pnbp_pgl1 = 10000;
 $pnbp_putusan = 10000;
 $redaksi = 10000;
 $materai = 10000;
-$jumlah = $biaya_pemohon + $biaya_termohon + $biaya_pemohon3 + $pendaftaran + $proses + ($pnbp_pgl1 * 3)  + $pnbp_putusan + $redaksi + $materai;
+$jumlah = $biaya_pemohon + $biaya_termohon + $pendaftaran + $proses + ($pnbp_pgl1 * 2)  + $pnbp_putusan + $redaksi + $materai;
 
 $terbilang = terbilang($jumlah);
 ?>
@@ -206,7 +194,7 @@ $terbilang = terbilang($jumlah);
                           <div class="d-flex px-2 py-1">
 
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-xs">Biaya Proses</h6>
+                              <h6 class="mb-0 text-xs">Biaya Proses / ATK</h6>
                             </div>
                           </div>
                         </td>
@@ -219,7 +207,7 @@ $terbilang = terbilang($jumlah);
                           <div class="d-flex px-2 py-1">
 
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-xs">Panggilan Pemohon 1 (2 Kali)</h6>
+                              <h6 class="mb-0 text-xs">Panggilan Pemohon 1 & Pemohon 2 (2 Kali)</h6>
                               <br>
                               <h6 class="mb-0 text-xs">Lokasi: KELURAHAN <?= $result1["NM_KEL"] ?>, </h6>
                               <h6 class="mb-0 text-xs">KECAMATAN <?= $result1["NM_KEC"] ?></h6>
@@ -248,7 +236,7 @@ $terbilang = terbilang($jumlah);
                           <div class="d-flex px-2 py-1">
 
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-xs">Panggilan Tergugat (3 Kali)</h6>
+                              <h6 class="mb-0 text-xs">Panggilan Pemohon 3 (3 Kali)</h6>
                               <br>
                               <h6 class="mb-0 text-xs">Lokasi: KELURAHAN <?= $result2["KELURAHAN"] ?>, </h6>
                               <h6 class="mb-0 text-xs">KECAMATAN <?= $result2["KECAMATAN"] ?></h6>

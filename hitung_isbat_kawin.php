@@ -160,7 +160,7 @@ if (isset($_POST["talak"])) {
     responsiveVoice.OnVoiceReady = function() {
       console.log("speech time?");
       responsiveVoice.speak(
-        "Perhitungan Isbat Kawin",
+        "Perhitungan Isbat Nikah",
         "Indonesian Female", {
           pitch: 1,
           rate: 1,
@@ -235,7 +235,7 @@ if (isset($_POST["talak"])) {
           <form action="" method="POST">
             <div class="card mb-3 z-index-2 h-100">
               <div class="card-header pb-0 pt-3 bg-transparent">
-                <h6 class="text-capitalize">Isbat Kawin</h6>
+                <h6 class="text-capitalize">Isbat Nikah</h6>
 
               </div>
               <div class="card-body">

@@ -69,7 +69,7 @@ $html1 = '
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/logo-pa-pasuruan.png">
-    <title>Rincian Cerai Gugat</title>
+    <title>Rincian Harta Bersama</title>
     <style>
     .isi{
       border: 1px solid black;
@@ -127,7 +127,7 @@ $html1 = '
   </tr>
   <tr class="isi">
       <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>Biaya Proses</p>
+          <p>Biaya Proses / ATK</p>
          
       </td>
       

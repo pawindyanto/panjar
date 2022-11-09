@@ -4,25 +4,19 @@ session_start();
 // Define Talak
 $kelurahan1 = isset($_POST['kelurahan1']) ? $$_POST['kelurahan1'] : '';
 $kelurahan2 = isset($_POST['kelurahan2']) ? $$_POST['kelurahan2'] : '';
-$kelurahan3 = isset($_POST['kelurahan3']) ? $$_POST['kelurahan3'] : '';
 $kecamatan1 = isset($_POST['kecamatan1']) ? $$_POST['kecamatan1'] : '';
 $kecamatan2 = isset($_POST['kecamatan2']) ? $$_POST['kecamatan2'] : '';
-$kecamatan3 = isset($_POST['kecamatan3']) ? $$_POST['kecamatan3'] : '';
 $kota1 = isset($_POST['kota1']) ? $$_POST['kota1'] : '';
 $kota2 = isset($_POST['kota2']) ? $$_POST['kota2'] : '';
-$kota3 = isset($_POST['kota3']) ? $$_POST['kota3'] : '';
 // Define Talak
 if (isset($_POST["talak"])) {
   $_SESSION["izin_poligami"] = true;
   $kota1 = $_POST["kota1"];
   $kota2 = $_POST["kota2"];
-  $kota3 = $_POST["kota3"];
   $kecamatan1 = $_POST["kecamatan1"];
   $kecamatan2 = $_POST["kecamatan2"];
-  $kecamatan3 = $_POST["kecamatan3"];
   $kelurahan1 = $_POST["kelurahan1"];
   $kelurahan2 = $_POST["kelurahan2"];
-  $kelurahan3 = $_POST["kelurahan3"];
 
   $_SESSION["kota1"] = $kota1;
   $_SESSION["kecamatan1"] = $kecamatan1;
@@ -30,9 +24,7 @@ if (isset($_POST["talak"])) {
   $_SESSION["kota2"] = $kota2;
   $_SESSION["kecamatan2"] = $kecamatan2;
   $_SESSION["kelurahan2"] = $kelurahan2;
-  $_SESSION["kota3"] = $kota3;
-  $_SESSION["kecamatan3"] = $kecamatan3;
-  $_SESSION["kelurahan3"] = $kelurahan3;
+
   header("Location: view_izin_poligami");
 }
 
@@ -250,7 +242,7 @@ if (isset($_POST["talak"])) {
               <div class="card-body">
                 <div class="card">
                   <div class="card-header pb-0 bg-transparent">
-                    <h6 class="text-capitalize">Data Pemohon 1 </h6>
+                    <h6 class="text-capitalize">Data Pemohon 1 & Pemohon 2</h6>
                   </div>
                   <div class="card-body">
 
@@ -286,7 +278,7 @@ if (isset($_POST["talak"])) {
                 </div>
                 <div class="card mt-2">
                   <div class="card-header pb-0  bg-transparent">
-                    <h6 class="text-capitalize">Data Pemohon 2 </h6>
+                    <h6 class="text-capitalize">Data Pemohon 3 </h6>
                   </div>
                   <div class="card-body">
 
@@ -318,45 +310,6 @@ if (isset($_POST["talak"])) {
 
                       </select>
                     </div>
-
-
-
-                  </div>
-                </div>
-                <div class="card mt-2">
-                  <div class="card-header pb-0  bg-transparent">
-                    <h6 class="text-capitalize">Data Pemohon 3 </h6>
-                  </div>
-                  <div class="card-body">
-
-
-                    <div class="form-group">
-                      <label for="kota3">Kota</label>
-                      <select class="form-control" name="kota3" id="kota3" required>
-                        <option value="">--- Pilih Kota ---</option>
-                        <?php
-                        $kota = mysqli_query($conn, "SELECT * FROM ref_kota ORDER BY KD_KOTA");
-                        while ($k = mysqli_fetch_assoc($kota)) : ?>
-                          <option value="<?= $k["KD_KOTA"] ?>"><?= $k["NM_KOTA"] ?></option>
-                        <?php
-                        endwhile;
-                        ?>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="kecamatan3">Kecamatan</label>
-                      <select class="form-control" name="kecamatan3" id="kecamatan3" required>
-                        <option value="">--- Pilih Kecamatan ---</option>
-
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="kelurahan2">Kelurahan</label>
-                      <select class="form-control" name="kelurahan3" id="kelurahan3" required>
-                        <option value="">--- Pilih Kelurahan ---</option>
-
-                      </select>
-                    </div>
                     <div>
                       <button class="btn btn-icon btn-3 btn-success" type="submit" name="talak">
                         <span class="btn-inner--text">Hitung</span>
@@ -366,6 +319,7 @@ if (isset($_POST["talak"])) {
 
                   </div>
                 </div>
+
 
               </div>
             </div>

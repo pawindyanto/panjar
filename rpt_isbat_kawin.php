@@ -54,7 +54,7 @@ $html1 = '
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/logo-pa-pasuruan.png">
-    <title>Rincian Cerai Gugat</title>
+    <title>Rincian Isbat Nikah</title>
     <style>
     .isi{
       border: 1px solid black;
@@ -87,7 +87,7 @@ $html1 = '
 <table class="isi" style="width:100%;" >
 <tr class="isi">
       <td colspan="2" class="isi" style="padding: 10px 0; text-align: center">
-          <h4>Rincian Biaya Perkara Isbat Kawin</h4>
+          <h4>Rincian Biaya Perkara Isbat Nikah</h4>
       </td> 
 </tr>
   <tr class="isi">
@@ -112,7 +112,7 @@ $html1 = '
   </tr>
   <tr class="isi">
       <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>Biaya Proses</p>
+          <p>Biaya Proses / ATK</p>
          
       </td>
       
@@ -122,7 +122,7 @@ $html1 = '
   </tr>
   <tr class="isi">
       <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>Panggilan Pemohon 1 (3 Kali)</p>
+          <p>Panggilan Pemohon 1 & Pemohon 2 (3 Kali)</p>
           <br>
           <p>Lokasi: KELURAHAN ' . $result1["NM_KEL"] . ', KECAMATAN ' . $result1["NM_KEC"] . '</p>
       </td>

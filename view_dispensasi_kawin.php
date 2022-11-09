@@ -5,8 +5,8 @@ session_start();
 // Define Database
 include "./config/conn_DBpanjar.php";
 $jumlah = $_SESSION["jumlah"];
-// if (!isset($_SESSION["gugat"])) {
-//   header("Location: hitung_gugat");
+// if (!isset($_SESSION["dispensasi_kawin"])) {
+//   header("Location: hitung_dispensasi_kawin");
 //   exit;
 // }
 // Define Variabel by Session 
@@ -131,7 +131,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
 
                     $result1 = mysqli_fetch_assoc($pemohon);
 
-                    $biaya_pemohon = 3 * $result1["biaya"];
+                    $biaya_pemohon = 1 * $result1["biaya"];
 
                     // Define biaya rincian
                     $pendaftaran = 30000;
@@ -178,7 +178,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Biaya Proses</h6>
+                                                        <h6 class="mb-0 text-xs">Biaya Proses / ATK</h6>
                                                       </div>
                                                     </div>
                                                   </td>
@@ -191,7 +191,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 1 (3 kali)</h6>
+                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 1 (1 kali)</h6>
                                                         <br>
                                                         <h6 class="mb-0 text-xs">Lokasi: KELURAHAN ' . $result1["NM_KEL"] . ', </h6>
                                                         <h6 class="mb-0 text-xs">KECAMATAN ' . $result1["NM_KEC"] . '</h6>
@@ -312,7 +312,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
 
                     $result1 = mysqli_fetch_assoc($pemohon);
 
-                    $biaya_pemohon = 3 * $result1["biaya"];
+                    $biaya_pemohon = 1 * $result1["biaya"];
 
 
                     // Define and Identified Location Name for Termohon
@@ -328,7 +328,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
 
                     $result2 = mysqli_fetch_assoc($termohon);
 
-                    $biaya_termohon = 3 * $result2["harga"];
+                    $biaya_termohon = 1 * $result2["harga"];
 
                     // Define biaya rincian
                     $pendaftaran = 30000;
@@ -375,7 +375,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Biaya Proses</h6>
+                                                        <h6 class="mb-0 text-xs">Biaya Proses / ATK</h6>
                                                       </div>
                                                     </div>
                                                   </td>
@@ -388,7 +388,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 1 (3 kali)</h6>
+                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 1 (1 kali)</h6>
                                                         <br>
                                                         <h6 class="mb-0 text-xs">Lokasi: KELURAHAN ' . $result1["NM_KEL"] . ', </h6>
                                                         <h6 class="mb-0 text-xs">KECAMATAN ' . $result1["NM_KEC"] . '</h6>
@@ -417,7 +417,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 2 (3 kali)</h6>
+                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 2 (1 kali)</h6>
                                                         <br>
                                                         <h6 class="mb-0 text-xs">Lokasi: KELURAHAN ' . $result2["KELURAHAN"] . ', </h6>
                                                         <h6 class="mb-0 text-xs">KECAMATAN ' . $result2["KECAMATAN"] . '</h6>
@@ -536,7 +536,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                               and a.KD_KEL='$kelurahan1'
                                               ");
                     $result1 = mysqli_fetch_assoc($pemohon1);
-                    $biaya_pemohon = 3 * $result1["biaya"];
+                    $biaya_pemohon = 1 * $result1["biaya"];
 
 
                     // Define and Identified Location Name for Termohon
@@ -550,7 +550,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                               and a.KD_KEL='$kelurahan2'
                                               ");
                     $result2 = mysqli_fetch_assoc($pemohon2);
-                    $biaya_pemohon2 = 3 * $result2["harga"];
+                    $biaya_pemohon2 = 1 * $result2["harga"];
 
                     $pemohon3 = mysqli_query($conn, "SELECT a.NM_KEL AS KELURAHAN, a.RADIUS, b.NM_KEC AS KECAMATAN, c.biaya AS harga
                                               FROM ref_kelurahan a
@@ -562,7 +562,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                               and a.KD_KEL='$kelurahan3'
                                               ");
                     $result3 = mysqli_fetch_assoc($pemohon3);
-                    $biaya_pemohon3 = 3 * $result3["harga"];
+                    $biaya_pemohon3 = 1 * $result3["harga"];
 
                     // Define biaya rincian
                     $pendaftaran = 30000;
@@ -609,7 +609,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Biaya Proses</h6>
+                                                        <h6 class="mb-0 text-xs">Biaya Proses / ATK</h6>
                                                       </div>
                                                     </div>
                                                   </td>
@@ -622,7 +622,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 1 (3 kali)</h6>
+                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 1 (1 kali)</h6>
                                                         <br>
                                                         <h6 class="mb-0 text-xs">Lokasi: KELURAHAN ' . $result1["NM_KEL"] . ', </h6>
                                                         <h6 class="mb-0 text-xs">KECAMATAN ' . $result1["NM_KEC"] . '</h6>
@@ -651,7 +651,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 2 (3 kali)</h6>
+                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 2 (1 kali)</h6>
                                                         <br>
                                                         <h6 class="mb-0 text-xs">Lokasi: KELURAHAN ' . $result2["KELURAHAN"] . ', </h6>
                                                         <h6 class="mb-0 text-xs">KECAMATAN ' . $result2["KECAMATAN"] . '</h6>
@@ -680,7 +680,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 3 (3 kali)</h6>
+                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 3 (1 kali)</h6>
                                                         <br>
                                                         <h6 class="mb-0 text-xs">Lokasi: KELURAHAN ' . $result3["KELURAHAN"] . ', </h6>
                                                         <h6 class="mb-0 text-xs">KECAMATAN ' . $result3["KECAMATAN"] . '</h6>
@@ -799,7 +799,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                         and a.KD_KEL='$kelurahan1'
                                         ");
                     $result1 = mysqli_fetch_assoc($pemohon1);
-                    $biaya_pemohon = 3 * $result1["biaya"];
+                    $biaya_pemohon = 1 * $result1["biaya"];
 
 
                     // Define and Identified Location Name for Termohon
@@ -813,7 +813,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                         and a.KD_KEL='$kelurahan2'
                                         ");
                     $result2 = mysqli_fetch_assoc($pemohon2);
-                    $biaya_pemohon2 = 3 * $result2["harga"];
+                    $biaya_pemohon2 = 1 * $result2["harga"];
 
                     $pemohon3 = mysqli_query($conn, "SELECT a.NM_KEL AS KELURAHAN, a.RADIUS, b.NM_KEC AS KECAMATAN, c.biaya AS harga
                                         FROM ref_kelurahan a
@@ -825,7 +825,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                         and a.KD_KEL='$kelurahan3'
                                         ");
                     $result3 = mysqli_fetch_assoc($pemohon3);
-                    $biaya_pemohon3 = 3 * $result3["harga"];
+                    $biaya_pemohon3 = 1 * $result3["harga"];
 
                     $pemohon4 = mysqli_query($conn, "SELECT a.NM_KEL AS KELURAHAN, a.RADIUS, b.NM_KEC AS KECAMATAN, c.biaya AS harga
                                         FROM ref_kelurahan a
@@ -837,7 +837,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                         and a.KD_KEL='$kelurahan3'
                                         ");
                     $result4 = mysqli_fetch_assoc($pemohon4);
-                    $biaya_pemohon4 = 3 * $result4["harga"];
+                    $biaya_pemohon4 = 1 * $result4["harga"];
 
                     // Define biaya rincian
                     $pendaftaran = 30000;
@@ -884,7 +884,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Biaya Proses</h6>
+                                                        <h6 class="mb-0 text-xs">Biaya Proses / ATK</h6>
                                                       </div>
                                                     </div>
                                                   </td>
@@ -897,7 +897,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 1 (3 kali)</h6>
+                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 1 (1 kali)</h6>
                                                         <br>
                                                         <h6 class="mb-0 text-xs">Lokasi: KELURAHAN ' . $result1["NM_KEL"] . ', </h6>
                                                         <h6 class="mb-0 text-xs">KECAMATAN ' . $result1["NM_KEC"] . '</h6>
@@ -926,7 +926,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 2 (3 kali)</h6>
+                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 2 (1 kali)</h6>
                                                         <br>
                                                         <h6 class="mb-0 text-xs">Lokasi: KELURAHAN ' . $result2["KELURAHAN"] . ', </h6>
                                                         <h6 class="mb-0 text-xs">KECAMATAN ' . $result2["KECAMATAN"] . '</h6>
@@ -955,7 +955,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 3 (3 kali)</h6>
+                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 3 (1 kali)</h6>
                                                         <br>
                                                         <h6 class="mb-0 text-xs">Lokasi: KELURAHAN ' . $result3["KELURAHAN"] . ', </h6>
                                                         <h6 class="mb-0 text-xs">KECAMATAN ' . $result3["KECAMATAN"] . '</h6>
@@ -984,7 +984,7 @@ $kelurahan4 = $_SESSION["kelurahan4"];
                                                     <div class="d-flex px-2 py-1">
                           
                                                       <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 4 (3 kali)</h6>
+                                                        <h6 class="mb-0 text-xs">Panggilan Pemohon 4 (1 kali)</h6>
                                                         <br>
                                                         <h6 class="mb-0 text-xs">Lokasi: KELURAHAN ' . $result4["KELURAHAN"] . ', </h6>
                                                         <h6 class="mb-0 text-xs">KECAMATAN ' . $result4["KECAMATAN"] . '</h6>

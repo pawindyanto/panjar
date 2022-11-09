@@ -62,7 +62,7 @@ $terbilang = terbilang($jumlah);
     responsiveVoice.OnVoiceReady = function() {
       console.log("speech time?");
       responsiveVoice.speak(
-        "Jumlah Biaya Isbat kawin Sebesar <?php echo $terbilang; ?> Rupiah",
+        "Jumlah Biaya Isbat Nikah Sebesar <?php echo $terbilang; ?> Rupiah",
         "Indonesian Female", {
           pitch: 1,
           rate: 1,
@@ -136,7 +136,7 @@ $terbilang = terbilang($jumlah);
         <div class="col-lg-12 mb-lg-0 mb-4">
           <div class="card mb-3 z-index-2 h-100">
             <div class="card-header pb-0 text-center pt-3 bg-transparent">
-              <h6 class="text-capitalize">Rincian Biaya Panjar Isbat Kawin</h6>
+              <h6 class="text-capitalize">Rincian Biaya Panjar Isbat Nikah</h6>
 
             </div>
             <div class="card-body">
@@ -174,7 +174,7 @@ $terbilang = terbilang($jumlah);
                           <div class="d-flex px-2 py-1">
 
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-xs">Biaya Proses</h6>
+                              <h6 class="mb-0 text-xs">Biaya Proses / ATK</h6>
                             </div>
                           </div>
                         </td>
@@ -187,7 +187,7 @@ $terbilang = terbilang($jumlah);
                           <div class="d-flex px-2 py-1">
 
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-xs">Panggilan Pemohon 1 & Pemohon 2(3 Kali)</h6>
+                              <h6 class="mb-0 text-xs">Panggilan Pemohon 1 & Pemohon 2 (3 Kali)</h6>
                               <br>
                               <h6 class="mb-0 text-xs">Lokasi: KELURAHAN <?= $result1["NM_KEL"] ?>, </h6>
                               <h6 class="mb-0 text-xs">KECAMATAN <?= $result1["NM_KEC"] ?></h6>
