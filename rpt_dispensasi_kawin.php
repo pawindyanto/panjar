@@ -6,7 +6,7 @@ include './config/conn_DBpanjar.php';
 //     header("Location: hitung_isbat_kawin");
 //     exit;
 // }
-$jumlah = $_SESSION["jumlah"];
+$jumlah_pemohon = $_SESSION["jumlah"];
 // Define Variabel by Session 
 $kota1 = $_SESSION["kota1"];
 $kecamatan1 = $_SESSION["kecamatan1"];
@@ -84,7 +84,7 @@ $html1 = '
     <th style="padding-left: 30px; padding-bottom: 6px; width:90%;">
         <h2 style="font-size:21px">PENGADILAN AGAMA PASURUAN</h2>
         <h5 style="font-size:15px">Jl. Ir. H. Juanda No. 11-A Telp./Fax.(0343) 410284/ (0343) 431155</h5>
-        <h5 style="font-size:15px">PASURUAN 67129</h5>
+        <h5 style="font-size:15px">PASURUAN 67129 ' . $jumlah_pemohon . '</h5>
         
     </th>
     
@@ -200,8 +200,15 @@ $html2 = '<h1>Danang2</h1>';
 $html3 = '<h1>Danang3</h1>';
 $html4 = '<h1>Danang4</h1>';
 // Write some HTML code:
-
-$mpdf->WriteHTML($html1);
+if ($jumlah_pemohon == '1') {
+    $mpdf->WriteHTML($html1);
+} elseif ($jumlah_pemohon == '2') {
+    $mpdf->WriteHTML($html2);
+} elseif ($jumlah_pemohon == '3') {
+    $mpdf->WriteHTML($html3);
+} elseif ($jumlah_pemohon == '4') {
+    $mpdf->WriteHTML($html4);
+}
 
 // Output a PDF file directly to the browser
 $mpdf->Output();
