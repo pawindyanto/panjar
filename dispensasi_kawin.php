@@ -1,10 +1,10 @@
 <?php
 include "./config/conn_DBpanjar.php";
 session_start();
-// if (!isset($_SESSION["dispensasi_kawin"])) {
-//   header("Location: hitung_dispensasi_kawin");
-//   exit;
-// }
+if (!isset($_SESSION["dispensasi_kawin"])) {
+  header("Location: hitung_dispensasi_kawin");
+  exit;
+}
 // Define Talak
 $jumlah = $_SESSION["jumlah"];
 $kelurahan1 = isset($_POST['kelurahan1']) ? $$_POST['kelurahan1'] : '';

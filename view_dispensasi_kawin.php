@@ -5,10 +5,10 @@ session_start();
 // Define Database
 include "./config/conn_DBpanjar.php";
 $jumlah = $_SESSION["jumlah"];
-// if (!isset($_SESSION["dispensasi_kawin"])) {
-//   header("Location: hitung_dispensasi_kawin");
-//   exit;
-// }
+if (!isset($_SESSION["dispensasi_kawin"])) {
+  header("Location: hitung_dispensasi_kawin");
+  exit;
+}
 // Define Variabel by Session 
 
 

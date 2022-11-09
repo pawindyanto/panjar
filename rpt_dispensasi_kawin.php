@@ -2,10 +2,10 @@
 session_start();
 // Define Database
 include './config/conn_DBpanjar.php';
-// if (!isset($_SESSION["isbat_kawin"])) {
-//     header("Location: hitung_isbat_kawin");
-//     exit;
-// }
+if (!isset($_SESSION["dispensasi_kawin"])) {
+    header("Location: hitung_dispensasi_kawin");
+    exit;
+}
 $jumlah_pemohon = $_SESSION["jumlah"];
 // Define Variabel by Session 
 $kota1 = $_SESSION["kota1"];
@@ -678,68 +678,71 @@ $html4 = '
       </td> 
   </tr>
   <tr class="isi">
-      <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>Panggilan Pemohon 2 (1 Kali)</p>
-          <br>
-          <p>Lokasi: KELURAHAN ' . $result2["KELURAHAN"] . ', KECAMATAN ' . $result2["KECAMATAN"] . '</p>
-      </td>
-      
-      <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
-          <p>Rp. ' . number_format($biaya_pemohon2, 0, ",", ".") . '</p>
-      </td> 
-  </tr>
-  <tr class="isi">
-      <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>PNBP Panggilan </p>
-         
-      </td>
-      
-      <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
-          <p>Rp. ' . number_format(($pnbp_pgl1 * 1), 0, ",", ".") . '</p>
-      </td> 
-  </tr>
-    <tr class="isi">
-        <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-            <p>Panggilan Pemohon 3 (1 Kali)</p>
-            <br>
-            <p>Lokasi: KELURAHAN ' . $result3["KELURAHAN"] . ', KECAMATAN ' . $result3["KECAMATAN"] . '</p>
-        </td>
-        
-        <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
-            <p>Rp. ' . number_format($biaya_pemohon3, 0, ",", ".") . '</p>
-        </td> 
-    </tr>
-    <tr class="isi">
-        <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-            <p>PNBP Panggilan </p>
-            
-        </td>
-        
-        <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
-            <p>Rp. ' . number_format(($pnbp_pgl1 * 1), 0, ",", ".") . '</p>
-        </td> 
-    </tr>
-    <tr class="isi">
-        <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-            <p>Panggilan Pemohon 4 (1 Kali)</p>
-            <br>
-            <p>Lokasi: KELURAHAN ' . $result4["KELURAHAN"] . ', KECAMATAN ' . $result4["KECAMATAN"] . '</p>
-        </td>
-        
-        <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
-            <p>Rp. ' . number_format($biaya_pemohon4, 0, ",", ".") . '</p>
-        </td> 
-    </tr>
-    <tr class="isi">
-        <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-            <p>PNBP Panggilan </p>
-            
-        </td>
-        
-        <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
-            <p>Rp. ' . number_format(($pnbp_pgl1 * 1), 0, ",", ".") . '</p>
-        </td> 
-    </tr>
+  <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
+      <p>Panggilan Pemohon 2 (1 Kali)</p>
+      <br>
+      <p>Lokasi: KELURAHAN ' . $result2["KELURAHAN"] . ', KECAMATAN ' . $result2["KECAMATAN"] . '</p>
+  </td>
+  
+  <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
+      <p>Rp. ' . number_format($biaya_pemohon2, 0, ",", ".") . '</p>
+  </td> 
+</tr>
+<tr class="isi">
+  <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
+      <p>PNBP Panggilan </p>
+     
+  </td>
+  
+  <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
+      <p>Rp. ' . number_format(($pnbp_pgl1 * 1), 0, ",", ".") . '</p>
+  </td> 
+</tr>
+
+<tr class="isi">
+    <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
+        <p>Panggilan Pemohon 3 (1 Kali)</p>
+        <br>
+        <p>Lokasi: KELURAHAN ' . $result3["KELURAHAN"] . ', KECAMATAN ' . $result3["KECAMATAN"] . '</p>
+    </td>
+
+    <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
+        <p>Rp. ' . number_format($biaya_pemohon3, 0, ",", ".") . '</p>
+    </td> 
+</tr>
+<tr class="isi">
+    <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
+        <p>PNBP Panggilan </p>
+    
+    </td>
+
+    <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
+        <p>Rp. ' . number_format(($pnbp_pgl1 * 1), 0, ",", ".") . '</p>
+    </td> 
+</tr>
+
+<tr class="isi">
+    <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
+        <p>Panggilan Pemohon 4 (1 Kali)</p>
+        <br>
+        <p>Lokasi: KELURAHAN ' . $result4["KELURAHAN"] . ', KECAMATAN ' . $result4["KECAMATAN"] . '</p>
+    </td>
+
+    <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
+        <p>Rp. ' . number_format($biaya_pemohon4, 0, ",", ".") . '</p>
+    </td> 
+</tr>
+<tr class="isi">
+    <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
+        <p>PNBP Panggilan </p>
+    
+    </td>
+
+    <td style="width:30%; padding-left: 30px; padding-top: 10px; " class="isi">
+        <p>Rp. ' . number_format(($pnbp_pgl1 * 1), 0, ",", ".") . '</p>
+    </td> 
+</tr>
+
   <tr class="isi">
       <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
           <p>PNBP PBT Putusan</p>
