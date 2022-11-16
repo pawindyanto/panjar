@@ -15,9 +15,7 @@ $kota2 = $_SESSION["kota2"];
 $kecamatan2 = $_SESSION["kecamatan2"];
 $kelurahan2 = $_SESSION["kelurahan2"];
 
-$kota3 = $_SESSION["kota3"];
-$kecamatan3 = $_SESSION["kecamatan3"];
-$kelurahan3 = $_SESSION["kelurahan3"];
+
 
 
 

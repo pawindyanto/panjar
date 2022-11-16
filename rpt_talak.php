@@ -56,10 +56,11 @@ $redaksi = 10000;
 $materai = 10000;
 $jumlah = $biaya_pemohon + $biaya_termohon + $pendaftaran + $proses + ($pnbp_pgl1 * 1) + ($pnbp_pgl1 * 1) + $pnbp_putusan + $redaksi + $materai;
 
-// Require composer autoload
-require_once __DIR__ . '/vendor/autoload.php';
-// Create an instance of the class:
-$mpdf = new \Mpdf\Mpdf();
+// Define relative path from this script to mPDF
+$nama_dokumen = 'Rincian Biaya Panjar Cerai Talak'; //Beri nama file PDF hasil.
+define('_MPDF_PATH', 'vendor/mpdf/');
+include(_MPDF_PATH . "mpdf.php");
+$mpdf = new mPDF('utf-8', 'A4'); // Create new mPDF Document
 $html1 = '
 <!DOCTYPE html>
 <html lang="en">
@@ -225,8 +226,6 @@ $html1 = '
 
 </html>
 ';
-// Write some HTML code:
-$mpdf->WriteHTML($html1);
-
-// Output a PDF file directly to the browser
-$mpdf->Output();
+$mpdf->WriteHTML(utf8_encode($html1));
+$mpdf->Output($nama_dokumen . ".pdf", 'I');
+exit;

@@ -84,10 +84,11 @@ $jumlah_pemohon2 = $biaya_pemohon + $biaya_pemohon2  + $pendaftaran + $proses + 
 $jumlah_pemohon3 = $biaya_pemohon + $biaya_pemohon2 + $biaya_pemohon3  + $pendaftaran + $proses + ($pnbp_pgl1 * 3)  + $pnbp_putusan + $redaksi + $materai;
 $jumlah_pemohon4 = $biaya_pemohon + $biaya_pemohon2 + $biaya_pemohon3 + $biaya_pemohon4 + $pendaftaran + $proses + ($pnbp_pgl1 * 4)  + $pnbp_putusan + $redaksi + $materai;
 
-// Require composer autoload
-require_once __DIR__ . '/vendor/autoload.php';
-// Create an instance of the class:
-$mpdf = new \Mpdf\Mpdf();
+// Define relative path from this script to mPDF
+$nama_dokumen = 'Rincian Biaya Panjar Dispensasi Kawin'; //Beri nama file PDF hasil.
+define('_MPDF_PATH', 'vendor/mpdf/');
+include(_MPDF_PATH . "mpdf.php");
+$mpdf = new mPDF('utf-8', 'A4'); // Create new mPDF Document
 $html1 = '
 <!DOCTYPE html>
 <html lang="en">
@@ -792,14 +793,16 @@ $html4 = '
 ';
 // Write some HTML code:
 if ($jumlah_pemohon == '1') {
-    $mpdf->WriteHTML($html1);
+    $mpdf->WriteHTML(utf8_encode($html1));
 } elseif ($jumlah_pemohon == '2') {
-    $mpdf->WriteHTML($html2);
+    $mpdf->WriteHTML(utf8_encode($html2));
 } elseif ($jumlah_pemohon == '3') {
-    $mpdf->WriteHTML($html3);
+    $mpdf->WriteHTML(utf8_encode($html3));
 } elseif ($jumlah_pemohon == '4') {
-    $mpdf->WriteHTML($html4);
+    $mpdf->WriteHTML(utf8_encode($html4));
 }
 
 // Output a PDF file directly to the browser
-$mpdf->Output();
+
+$mpdf->Output($nama_dokumen . ".pdf", 'I');
+exit;
