@@ -32,7 +32,7 @@ $pemohon1 = mysqli_query($conn, "SELECT a.NM_KEL, a.RADIUS, b.NM_KEC, c.biaya
                                 and a.KD_KEL='$kelurahan1'
                                 ");
 $result1 = mysqli_fetch_assoc($pemohon1);
-$biaya_pemohon = 1 * $result1["biaya"];
+$biaya_pemohon = 2 * $result1["biaya"];
 
 
 // Define and Identified Location Name for Termohon
@@ -46,7 +46,7 @@ $pemohon2 = mysqli_query($conn, "SELECT a.NM_KEL AS KELURAHAN, a.RADIUS, b.NM_KE
                                 and a.KD_KEL='$kelurahan2'
                                 ");
 $result2 = mysqli_fetch_assoc($pemohon2);
-$biaya_pemohon2 = 1 * $result2["harga"];
+$biaya_pemohon2 = 2 * $result2["harga"];
 
 $pemohon3 = mysqli_query($conn, "SELECT a.NM_KEL AS KELURAHAN, a.RADIUS, b.NM_KEC AS KECAMATAN, c.biaya AS harga
                                 FROM ref_kelurahan a
@@ -58,7 +58,7 @@ $pemohon3 = mysqli_query($conn, "SELECT a.NM_KEL AS KELURAHAN, a.RADIUS, b.NM_KE
                                 and a.KD_KEL='$kelurahan3'
                                 ");
 $result3 = mysqli_fetch_assoc($pemohon3);
-$biaya_pemohon3 = 1 * $result3["harga"];
+$biaya_pemohon3 = 2 * $result3["harga"];
 
 $pemohon4 = mysqli_query($conn, "SELECT a.NM_KEL AS KELURAHAN, a.RADIUS, b.NM_KEC AS KECAMATAN, c.biaya AS harga
                                 FROM ref_kelurahan a
@@ -70,7 +70,7 @@ $pemohon4 = mysqli_query($conn, "SELECT a.NM_KEL AS KELURAHAN, a.RADIUS, b.NM_KE
                                 and a.KD_KEL='$kelurahan3'
                                 ");
 $result4 = mysqli_fetch_assoc($pemohon4);
-$biaya_pemohon4 = 1 * $result4["harga"];
+$biaya_pemohon4 = 2 * $result4["harga"];
 
 // Define biaya rincian
 $pendaftaran = 30000;
@@ -166,7 +166,7 @@ $html1 = '
   </tr>
   <tr class="isi">
       <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>Panggilan Pemohon 1 (1 Kali)</p>
+          <p>Panggilan Pemohon 1 (2 kali)</p>
           <br>
           <p>Lokasi: KELURAHAN ' . $result1["NM_KEL"] . ', KECAMATAN ' . $result1["NM_KEC"] . '</p>
       </td>
@@ -310,7 +310,7 @@ $html2 = '
   </tr>
   <tr class="isi">
       <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>Panggilan Pemohon 1 (1 Kali)</p>
+          <p>Panggilan Pemohon 1 (2 kali)</p>
           <br>
           <p>Lokasi: KELURAHAN ' . $result1["NM_KEL"] . ', KECAMATAN ' . $result1["NM_KEC"] . '</p>
       </td>
@@ -331,7 +331,7 @@ $html2 = '
   </tr>
   <tr class="isi">
       <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>Panggilan Pemohon 2 (1 Kali)</p>
+          <p>Panggilan Pemohon 2 (2 kali)</p>
           <br>
           <p>Lokasi: KELURAHAN ' . $result2["KELURAHAN"] . ', KECAMATAN ' . $result2["KECAMATAN"] . '</p>
       </td>
@@ -474,7 +474,7 @@ $html3 = '
   </tr>
   <tr class="isi">
       <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>Panggilan Pemohon 1 (1 Kali)</p>
+          <p>Panggilan Pemohon 1 (2 kali)</p>
           <br>
           <p>Lokasi: KELURAHAN ' . $result1["NM_KEL"] . ', KECAMATAN ' . $result1["NM_KEC"] . '</p>
       </td>
@@ -495,7 +495,7 @@ $html3 = '
   </tr>
   <tr class="isi">
       <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>Panggilan Pemohon 2 (1 Kali)</p>
+          <p>Panggilan Pemohon 2 (2 kali)</p>
           <br>
           <p>Lokasi: KELURAHAN ' . $result2["KELURAHAN"] . ', KECAMATAN ' . $result2["KECAMATAN"] . '</p>
       </td>
@@ -516,7 +516,7 @@ $html3 = '
   </tr>
   <tr class="isi">
   <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-      <p>Panggilan Pemohon 3 (1 Kali)</p>
+      <p>Panggilan Pemohon 3 (2 kali)</p>
       <br>
       <p>Lokasi: KELURAHAN ' . $result3["KELURAHAN"] . ', KECAMATAN ' . $result3["KECAMATAN"] . '</p>
   </td>
@@ -659,7 +659,7 @@ $html4 = '
   </tr>
   <tr class="isi">
       <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-          <p>Panggilan Pemohon 1 (1 Kali)</p>
+          <p>Panggilan Pemohon 1 (2 kali)</p>
           <br>
           <p>Lokasi: KELURAHAN ' . $result1["NM_KEL"] . ', KECAMATAN ' . $result1["NM_KEC"] . '</p>
       </td>
@@ -680,7 +680,7 @@ $html4 = '
   </tr>
   <tr class="isi">
   <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-      <p>Panggilan Pemohon 2 (1 Kali)</p>
+      <p>Panggilan Pemohon 2 (2 kali)</p>
       <br>
       <p>Lokasi: KELURAHAN ' . $result2["KELURAHAN"] . ', KECAMATAN ' . $result2["KECAMATAN"] . '</p>
   </td>
@@ -702,7 +702,7 @@ $html4 = '
 
 <tr class="isi">
     <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-        <p>Panggilan Pemohon 3 (1 Kali)</p>
+        <p>Panggilan Pemohon 3 (2 kali)</p>
         <br>
         <p>Lokasi: KELURAHAN ' . $result3["KELURAHAN"] . ', KECAMATAN ' . $result3["KECAMATAN"] . '</p>
     </td>
@@ -724,7 +724,7 @@ $html4 = '
 
 <tr class="isi">
     <td style=" width:25%; padding-left: 10px; padding-top: 10px; text-align: left">
-        <p>Panggilan Pemohon 4 (1 Kali)</p>
+        <p>Panggilan Pemohon 4 (2 kali)</p>
         <br>
         <p>Lokasi: KELURAHAN ' . $result4["KELURAHAN"] . ', KECAMATAN ' . $result4["KECAMATAN"] . '</p>
     </td>
