@@ -15,5 +15,6 @@ Dikembangkan dan dibuat untuk menghitung biaya panjar perkara di pengadilan agam
 - Jquery
 - Bootstrap
 - PHP
+- ResponsiveVoice Text To Speech
 
 Untuk mencoba aplikasi bisa kamu kunjungi website <a href="https://sipanjoel.pa-pasuruan.go.id/"> ini </a> 
