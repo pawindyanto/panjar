@@ -63,5 +63,5 @@ Untuk mencoba dan menggunakan aplikasi ini, silakan kunjungi tautan resmi beriku
 ---
 
 <div align="center">
-  <small>Dikembangkan oleh Tim IT Pengadilan Agama Pasuruan © 2025</small>
+  <small>Dikembangkan oleh Danang © 2025</small>
 </div>
