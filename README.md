@@ -51,7 +51,7 @@ Dibangun menggunakan teknologi web yang ringan dan kompatibel di berbagai perang
 
 ## 📸 Screenshots
 <div align="center">
-  <img src="https://via.placeholder.com/800x400?text=Preview+Aplikasi+Sipanjoel" alt="Screenshot Aplikasi" width="100%" style="border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);" />
+  <img src="https://github.com/pawindyanto/panjar/blob/main/Screenshot%20Panjoel.png" alt="Screenshot Aplikasi" width="100%" style="border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);" />
 </div>
 
 ## 🔗 Akses Aplikasi
